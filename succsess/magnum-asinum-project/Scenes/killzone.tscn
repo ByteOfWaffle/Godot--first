@@ -6,7 +6,7 @@
 script = ExtResource("1_yp7su")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.703
+wait_time = 0.45
 one_shot = true
 
 [connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
