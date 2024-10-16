@@ -1,39 +1,81 @@
-[gd_scene load_steps=10 format=3 uid="uid://r0lnptd5cx4b"]
+[gd_scene load_steps=16 format=3 uid="uid://r0lnptd5cx4b"]
 
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_6acqk"]
-[ext_resource type="Texture2D" uid="uid://cs6d3i32brlce" path="res://Assets/sprites/slime_green.png" id="1_lfjtp"]
+[ext_resource type="Texture2D" uid="uid://c2pmkgiujlo8h" path="res://Assets/sprites/stormhead/run.png" id="2_3mce1"]
 [ext_resource type="PackedScene" uid="uid://u5k0crx5l808" path="res://Scenes/killzone.tscn" id="2_84vsg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2tv15"]
-atlas = ExtResource("1_lfjtp")
-region = Rect2(0, 24, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f3ck"]
+atlas = ExtResource("2_3mce1")
+region = Rect2(0, 0, 119, 124)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w5s4y"]
-atlas = ExtResource("1_lfjtp")
-region = Rect2(24, 24, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0gf4"]
+atlas = ExtResource("2_3mce1")
+region = Rect2(0, 124, 119, 124)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ja4os"]
-atlas = ExtResource("1_lfjtp")
-region = Rect2(48, 24, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoon2"]
+atlas = ExtResource("2_3mce1")
+region = Rect2(0, 248, 119, 124)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p1w4b"]
-atlas = ExtResource("1_lfjtp")
-region = Rect2(72, 24, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_losmu"]
+atlas = ExtResource("2_3mce1")
+region = Rect2(0, 372, 119, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aegir"]
+atlas = ExtResource("2_3mce1")
+region = Rect2(0, 496, 119, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wpiu"]
+atlas = ExtResource("2_3mce1")
+region = Rect2(0, 620, 119, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e51mr"]
+atlas = ExtResource("2_3mce1")
+region = Rect2(0, 744, 119, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74223"]
+atlas = ExtResource("2_3mce1")
+region = Rect2(0, 868, 119, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iwhn"]
+atlas = ExtResource("2_3mce1")
+region = Rect2(0, 992, 119, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_743h1"]
+atlas = ExtResource("2_3mce1")
+region = Rect2(0, 1116, 119, 124)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lwbfb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2tv15")
+"texture": SubResource("AtlasTexture_6f3ck")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w5s4y")
+"texture": SubResource("AtlasTexture_q0gf4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ja4os")
+"texture": SubResource("AtlasTexture_aoon2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p1w4b")
+"texture": SubResource("AtlasTexture_losmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aegir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wpiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e51mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74223")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iwhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_743h1")
 }],
 "loop": true,
 "name": &"default",
@@ -44,28 +86,40 @@ animations = [{
 size = Vector2(10, 14)
 
 [node name="Slime" type="Node2D"]
+z_index = 5
+position = Vector2(0, 1)
 script = ExtResource("1_6acqk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(13, -111)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_lwbfb")
 autoplay = "default"
-frame = 2
 
 [node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_84vsg")]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
-position = Vector2(0, 4)
+position = Vector2(-6, 49)
 shape = SubResource("RectangleShape2D_h2mfd")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0.5, -13)
 target_position = Vector2(10, 0)
 collision_mask = 128
 
+[node name="RightKill" type="RayCast2D" parent="."]
+position = Vector2(0.5, -13)
+target_position = Vector2(44, 0)
+collision_mask = 128
+
 [node name="RayCastLeft" type="RayCast2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0.5, -13)
 target_position = Vector2(-11, 0)
+collision_mask = 128
+
+[node name="LeftKill" type="RayCast2D" parent="."]
+position = Vector2(0.5, -13)
+target_position = Vector2(-23.5, 0)
 collision_mask = 128

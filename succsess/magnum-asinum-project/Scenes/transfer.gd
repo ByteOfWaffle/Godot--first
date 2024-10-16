@@ -1,14 +1,15 @@
 extends Area2D
 
-@onready var timer: Timer = $Timer
+@onready var timertrans: Timer = $Timertrans
+
 
 func _on_body_entered(body: Node2D) -> void:
 	Engine.time_scale = 0.5
 	body.get_node("CollisionShape2D").queue_free()
-	timer.start()
+	timertrans.start()
 
 
 func _on_timer_timeout() -> void:
-	print("You died!")
+	print("Transfered")
 	Engine.time_scale = 1
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Scenes/train.tscn")

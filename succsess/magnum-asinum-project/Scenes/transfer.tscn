@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b62ugmwrc1t02"]
+
+[node name="transfer" type="Area2D"]
+
+[node name="Timertrans" type="Timer" parent="."]
+wait_time = 0.45
+one_shot = true
