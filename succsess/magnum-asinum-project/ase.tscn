@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://da3hqgrb25pkb"]
+
+[node name="ase" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
