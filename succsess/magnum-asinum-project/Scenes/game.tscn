@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d2miga0cyguwv"]
+[gd_scene load_steps=24 format=3 uid="uid://d2miga0cyguwv"]
 
 [ext_resource type="PackedScene" uid="uid://ov0vfo524q6q" path="res://Scenes/player.tscn" id="1_2hsnm"]
 [ext_resource type="Script" path="res://Scripts/gamemanager.gd" id="1_ubfj6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ctyrmi52biote" path="res://Assets/sprites/BackDrops/Nightcity.png" id="11_xcats"]
 [ext_resource type="PackedScene" uid="uid://b62ugmwrc1t02" path="res://Scenes/transfer.tscn" id="12_7404v"]
 [ext_resource type="Texture2D" uid="uid://fwcq3ncledt5" path="res://Assets/sprites/train door.png" id="13_p5cw4"]
+[ext_resource type="PackedScene" uid="uid://draqmu7hmwvvs" path="res://Scenes/enemy_direction.tscn" id="14_urb6j"]
 
 [sub_resource type="Animation" id="Animation_6wp53"]
 resource_name = "Move"
@@ -2132,6 +2133,9 @@ sources/2 = SubResource("TileSetAtlasSource_jyuwd")
 normal = Vector2(-1, 0)
 distance = 1.99896
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puair"]
+size = Vector2(24, 71)
+
 [node name="Game" type="Node2D"]
 
 [node name="Gamemanager" type="Node" parent="."]
@@ -2195,10 +2199,10 @@ position = Vector2(215, -71)
 position = Vector2(247, 21)
 
 [node name="Slime" parent="." instance=ExtResource("7_5y2ud")]
-position = Vector2(165, -116)
+position = Vector2(275, 52)
 
 [node name="Slime2" parent="." instance=ExtResource("7_5y2ud")]
-position = Vector2(53, -176)
+position = Vector2(437, 52)
 
 [node name="Node" type="Node" parent="."]
 
@@ -2272,3 +2276,18 @@ texture = ExtResource("13_p5cw4")
 position = Vector2(-445, -3.8147e-06)
 scale = Vector2(2.0625, 1.82813)
 texture = ExtResource("13_p5cw4")
+
+[node name="EnemyDirection" parent="." instance=ExtResource("14_urb6j")]
+position = Vector2(520, -2)
+disable_mode = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyDirection"]
+position = Vector2(-2, 26)
+shape = SubResource("RectangleShape2D_puair")
+
+[node name="EnemyDirection2" parent="." instance=ExtResource("14_urb6j")]
+position = Vector2(215, 3)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyDirection2"]
+position = Vector2(2, 25.5)
+shape = SubResource("RectangleShape2D_puair")
