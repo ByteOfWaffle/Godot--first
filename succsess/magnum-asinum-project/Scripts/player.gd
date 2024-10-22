@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 #Handle hiding
 	if Input.is_action_just_pressed("hide"):
 		velocity
-		#Hiding function here, by changing layer 
+		#Hiding function here, by changing layer. can apparently use set_collision_layer_bit
 
 	# Get the input direction and handle the movement/deceleration.
 	#Get input direction -1, 0 or 1
