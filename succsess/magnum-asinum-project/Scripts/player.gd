@@ -13,9 +13,14 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and MAX_JUMPS >1:
+	if Input.is_action_just_pressed("jump") and MAX_JUMPS >1: #If spacebar is pressed and max jumps is more than 1 then jump, since max jumps starts at two, this allows for double jump.
 		velocity.y = JUMP_VELOCITY
 		MAX_JUMPS -=1
+
+#Handle hiding
+	if Input.is_action_just_pressed("hide"):
+		velocity
+		#Hiding function here, by changing layer 
 
 	# Get the input direction and handle the movement/deceleration.
 	#Get input direction -1, 0 or 1
