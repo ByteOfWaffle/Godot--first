@@ -17,10 +17,13 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		MAX_JUMPS -=1
 
-#Handle hiding
-	if Input.is_action_just_pressed("hide"):
-		velocity
-		#Hiding function here, by changing layer. can apparently use set_collision_layer_bit
+#Handle hiding, or actually i can maybe get away with temporarely removing the collision layer of the enemy raycast or player.
+	var is_hidden = false
+	if Input.is_action_just_pressed("hide") and is_hidden == false:
+		set_collision_layer_value(2, false)
+		set_collision_layer_value(3, true)
+	else:
+		set_collision_layer_value(8, false)
 
 	# Get the input direction and handle the movement/deceleration.
 	#Get input direction -1, 0 or 1
