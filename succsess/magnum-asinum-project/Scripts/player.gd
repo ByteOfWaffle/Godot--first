@@ -21,7 +21,11 @@ func _physics_process(delta: float) -> void:
 	var is_hidden = false
 	if Input.is_action_just_pressed("hide") and is_hidden == false:
 		set_collision_layer_value(2, false)
-		set_collision_layer_value(3, true)
+		set_collision_layer_value(9, false)
+		set_collision_layer_value(24, true)
+		set_collision_mask_value(2, false)
+		set_collision_mask_value(1, false)
+		set_collision_mask_value(9, false)
 	else:
 		set_collision_layer_value(8, false)
 
