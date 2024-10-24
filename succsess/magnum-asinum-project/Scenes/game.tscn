@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://d2miga0cyguwv"]
+[gd_scene load_steps=26 format=3 uid="uid://d2miga0cyguwv"]
 
 [ext_resource type="PackedScene" uid="uid://ov0vfo524q6q" path="res://Scenes/player.tscn" id="1_2hsnm"]
+[ext_resource type="Shader" path="res://Assets/Shaders/game.gdshader" id="1_sncng"]
 [ext_resource type="Script" path="res://Scripts/gamemanager.gd" id="1_ubfj6"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="2_pqnuo"]
 [ext_resource type="FontFile" uid="uid://cs14rsgkkkey8" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_qivlf"]
@@ -14,6 +15,28 @@
 [ext_resource type="PackedScene" uid="uid://b62ugmwrc1t02" path="res://Scenes/transfer.tscn" id="12_7404v"]
 [ext_resource type="Texture2D" uid="uid://fwcq3ncledt5" path="res://Assets/sprites/train door.png" id="13_p5cw4"]
 [ext_resource type="PackedScene" uid="uid://draqmu7hmwvvs" path="res://Scenes/enemy_direction.tscn" id="14_urb6j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cexex"]
+shader = ExtResource("1_sncng")
+shader_parameter/glitch_intensity = 0.3
+shader_parameter/scan_line_speed = 1.0
+shader_parameter/distortion_amount = 0.2
+shader_parameter/tint_color = Color(0.8, 0.3, 0.2, 1)
+
+[sub_resource type="Environment" id="Environment_74aw0"]
+background_mode = 3
+tonemap_mode = 3
+ssao_radius = 12.3
+ssao_intensity = 8.65
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 4.7
+glow_strength = 1.3
+glow_blend_mode = 0
+glow_hdr_threshold = 0.7
+glow_hdr_scale = 2.5
+fog_sun_scatter = 7.65
+adjustment_enabled = true
 
 [sub_resource type="Animation" id="Animation_6wp53"]
 resource_name = "Move"
@@ -2135,6 +2158,10 @@ normal = Vector2(-1, 0)
 distance = 1.99896
 
 [node name="Game" type="Node2D"]
+material = SubResource("ShaderMaterial_cexex")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_74aw0")
 
 [node name="Gamemanager" type="Node" parent="."]
 unique_name_in_owner = true
