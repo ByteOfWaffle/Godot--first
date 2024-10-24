@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwcbxg8vis3ua"]
+[gd_scene load_steps=9 format=3 uid="uid://cwcbxg8vis3ua"]
 
 [ext_resource type="Texture2D" uid="uid://bm4vcy2dxxfue" path="res://Assets/sprites/Tileset__castle__.png" id="1_jnx4w"]
 [ext_resource type="Texture2D" uid="uid://ctyrmi52biote" path="res://Assets/sprites/BackDrops/Nightcity.png" id="2_un7te"]
 [ext_resource type="PackedScene" uid="uid://ov0vfo524q6q" path="res://Scenes/player.tscn" id="3_u5irl"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="4_2cn2h"]
+[ext_resource type="PackedScene" uid="uid://da3hqgrb25pkb" path="res://Scenes/ase.tscn" id="5_soqbb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s6vnl"]
 texture = ExtResource("1_jnx4w")
@@ -2091,7 +2092,7 @@ layer_0/tile_data = PackedInt32Array(65533, 1, 4, 65534, 1, 4, 65535, 1, 4, 0, 1
 
 [node name="Player" parent="." instance=ExtResource("3_u5irl")]
 z_index = 5
-position = Vector2(32, -16)
+position = Vector2(667, -65)
 scale = Vector2(2, 2)
 collision_layer = 258
 collision_mask = 259
@@ -2107,3 +2108,6 @@ position_smoothing_enabled = true
 [node name="Label" type="Label" parent="Player"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="ase" parent="." instance=ExtResource("5_soqbb")]
+position = Vector2(-693, -114)

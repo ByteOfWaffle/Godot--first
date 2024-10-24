@@ -54,7 +54,6 @@ func hidecharacter():
 		is_hidden = true
 		set_collision_layer_value(2, false)
 		set_collision_layer_value(9, false)
-		set_collision_layer_value(24, true)
 		set_collision_mask_value(2, false)
 		set_collision_mask_value(1, false)
 		set_collision_mask_value(9, false)
@@ -62,7 +61,6 @@ func hidecharacter():
 	else:
 		set_collision_layer_value(2, true)
 		set_collision_layer_value(9, true)
-		set_collision_layer_value(24, false)
 		set_collision_mask_value(2, true)
 		set_collision_mask_value(1, true)
 		set_collision_mask_value(9, true)

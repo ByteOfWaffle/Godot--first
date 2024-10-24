@@ -2151,9 +2151,9 @@ text = "Congrats you collected X amout of coins"
 
 [node name="Player" parent="." instance=ExtResource("1_2hsnm")]
 z_index = 5
-position = Vector2(-144, 15)
-collision_layer = 258
-collision_mask = 259
+position = Vector2(-144, 10)
+collision_layer = 1082130690
+collision_mask = 1082130691
 script = ExtResource("2_pqnuo")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -2173,9 +2173,9 @@ libraries = {
 autoplay = "Move"
 
 [node name="Killzone" parent="." instance=ExtResource("6_4wuku")]
-position = Vector2(108, 143)
-collision_layer = 8388866
-collision_mask = 8388866
+position = Vector2(28, 157)
+collision_layer = 1073742082
+collision_mask = 1073742082
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 z_index = 5
