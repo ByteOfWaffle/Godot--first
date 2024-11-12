@@ -1,0 +1,1 @@
+var globaltest = "something"
