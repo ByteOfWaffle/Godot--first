@@ -17,9 +17,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		MAX_JUMPS -=1
 
-#Handle hiding, can make the player have the same laye ras floor, but different layer from enemy, or actually i can maybe get away with temporarely removing the collision layer of the enemy raycast or player.
-	if Input.is_action_just_pressed("hide"):
-		hidecharacter()
+
 
 	# Get the input direction and handle the movement/deceleration.
 	#Get input direction -1, 0 or 1
@@ -46,11 +44,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+#Handle hiding, can make the player have the same laye ras floor, but different layer from enemy, or actually i can maybe get away with temporarely removing the collision layer of the enemy raycast or player.
+	if Input.is_action_just_pressed("hide"):
+		hidecharacter()
 	move_and_slide()
 var is_hidden = false
 func hidecharacter():
-	if Input.is_action_just_pressed("hide") and is_hidden == false:
+	if is_hidden == false:
 		is_hidden = true
 		set_collision_layer_value(2, false)
 		set_collision_layer_value(9, false)
