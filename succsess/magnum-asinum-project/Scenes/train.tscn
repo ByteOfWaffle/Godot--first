@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://d28re2m5avhyd"]
+[gd_scene load_steps=13 format=3 uid="uid://d28re2m5avhyd"]
 
 [ext_resource type="Texture2D" uid="uid://bm4vcy2dxxfue" path="res://Assets/sprites/Tileset__castle__.png" id="1_56y1v"]
 [ext_resource type="Texture2D" uid="uid://ctyrmi52biote" path="res://Assets/sprites/BackDrops/Nightcity.png" id="2_a0641"]
 [ext_resource type="PackedScene" uid="uid://ov0vfo524q6q" path="res://Scenes/player.tscn" id="3_k2eqr"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="4_ygsru"]
 [ext_resource type="PackedScene" uid="uid://u5k0crx5l808" path="res://Scenes/killzone.tscn" id="5_w8rxp"]
+[ext_resource type="PackedScene" uid="uid://b62ugmwrc1t02" path="res://Scenes/transfer.tscn" id="5_wjdgo"]
 [ext_resource type="Texture2D" uid="uid://fwcq3ncledt5" path="res://Assets/sprites/train door.png" id="6_hqkib"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2e0uf"]
@@ -2082,6 +2083,10 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_2e0uf")
 sources/2 = SubResource("TileSetAtlasSource_nset7")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ftgf3"]
+normal = Vector2(-1, 0)
+distance = 1.99896
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqwan"]
 
 [node name="train" type="Node2D"]
@@ -2106,6 +2111,15 @@ zoom = Vector2(5, 5)
 limit_bottom = 200
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="transfer" parent="Player" instance=ExtResource("5_wjdgo")]
+position = Vector2(-80, -73.5)
+collision_layer = 258
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/transfer"]
+position = Vector2(1057, 26)
+shape = SubResource("WorldBoundaryShape2D_ftgf3")
 
 [node name="Killzone" parent="." instance=ExtResource("5_w8rxp")]
 position = Vector2(108, 143)

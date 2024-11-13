@@ -2184,8 +2184,9 @@ collision_mask = 1082130691
 script = ExtResource("2_pqnuo")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(1, -10)
+position = Vector2(-1.66667, -10)
 zoom = Vector2(2, 2)
+limit_left = -480
 limit_bottom = 200
 limit_smoothed = true
 position_smoothing_enabled = true

@@ -5,9 +5,4 @@
 [node name="transfer" type="Area2D"]
 script = ExtResource("1_pl6e5")
 
-[node name="Timertrans" type="Timer" parent="."]
-wait_time = 0.001
-one_shot = true
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="Timertrans" to="." method="_on_timertrans_timeout"]
