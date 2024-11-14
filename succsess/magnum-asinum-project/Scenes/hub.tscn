@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwcbxg8vis3ua"]
+[gd_scene load_steps=15 format=3 uid="uid://cwcbxg8vis3ua"]
 
 [ext_resource type="Texture2D" uid="uid://bm4vcy2dxxfue" path="res://Assets/sprites/Tileset__castle__.png" id="1_jnx4w"]
 [ext_resource type="Texture2D" uid="uid://ctyrmi52biote" path="res://Assets/sprites/BackDrops/Nightcity.png" id="2_un7te"]
 [ext_resource type="PackedScene" uid="uid://ov0vfo524q6q" path="res://Scenes/player.tscn" id="3_u5irl"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="4_2cn2h"]
 [ext_resource type="PackedScene" uid="uid://da3hqgrb25pkb" path="res://Scenes/ase.tscn" id="5_soqbb"]
+[ext_resource type="Texture2D" uid="uid://fwcq3ncledt5" path="res://Assets/sprites/train door.png" id="6_wse0f"]
+[ext_resource type="PackedScene" uid="uid://b62ugmwrc1t02" path="res://Scenes/transfer.tscn" id="7_ygyrm"]
+[ext_resource type="Script" path="res://Scenes/transfergamelvl1.gd" id="8_0e51l"]
+[ext_resource type="Script" path="res://Scenes/transfergamelvl2.gd" id="9_qmybo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s6vnl"]
 texture = ExtResource("1_jnx4w")
@@ -2081,6 +2085,12 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_s6vnl")
 sources/2 = SubResource("TileSetAtlasSource_firx5")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5cb8"]
+size = Vector2(20, 64.1537)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx2nn"]
+size = Vector2(20, 62.9058)
+
 [node name="hub" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2092,8 +2102,8 @@ layer_0/tile_data = PackedInt32Array(65533, 1, 4, 65534, 1, 4, 65535, 1, 4, 0, 1
 
 [node name="Player" parent="." instance=ExtResource("3_u5irl")]
 z_index = 5
-position = Vector2(667, -65)
-scale = Vector2(2, 2)
+position = Vector2(-492, -80)
+scale = Vector2(2.57, 2.57)
 collision_layer = 258
 collision_mask = 259
 script = ExtResource("4_2cn2h")
@@ -2109,5 +2119,47 @@ position_smoothing_enabled = true
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="ase" parent="." instance=ExtResource("5_soqbb")]
+[node name="Heart" parent="." instance=ExtResource("5_soqbb")]
 position = Vector2(-693, -114)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="TrainDoor" type="Sprite2D" parent="Doors"]
+position = Vector2(-340, -56)
+scale = Vector2(2.0625, 1.82813)
+texture = ExtResource("6_wse0f")
+
+[node name="transfer" parent="Doors/TrainDoor" instance=ExtResource("7_ygyrm")]
+collision_layer = 258
+collision_mask = 258
+script = ExtResource("8_0e51l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/TrainDoor/transfer"]
+position = Vector2(-0.969681, 0.350443)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_o5cb8")
+
+[node name="TrainDoor2" type="Sprite2D" parent="Doors"]
+position = Vector2(41, -60)
+scale = Vector2(2.0625, 1.82813)
+texture = ExtResource("6_wse0f")
+
+[node name="transfer" parent="Doors/TrainDoor2" instance=ExtResource("7_ygyrm")]
+collision_layer = 258
+collision_mask = 258
+script = ExtResource("9_qmybo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/TrainDoor2/transfer"]
+position = Vector2(0, 1.36752)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_bx2nn")
+
+[node name="TrainDoor3" type="Sprite2D" parent="Doors"]
+position = Vector2(374, -59)
+scale = Vector2(2.0625, 1.82813)
+texture = ExtResource("6_wse0f")
+
+[node name="TrainDoor4" type="Sprite2D" parent="Doors"]
+position = Vector2(726, -58)
+scale = Vector2(2.0625, 1.82813)
+texture = ExtResource("6_wse0f")

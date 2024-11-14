@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://s5a5sdkpuk5j"]
+[gd_scene load_steps=11 format=3 uid="uid://s5a5sdkpuk5j"]
 
 [ext_resource type="Texture2D" uid="uid://bm4vcy2dxxfue" path="res://Assets/sprites/Tileset__castle__.png" id="1_d4bx0"]
 [ext_resource type="Texture2D" uid="uid://ctyrmi52biote" path="res://Assets/sprites/BackDrops/Nightcity.png" id="2_epejr"]
 [ext_resource type="PackedScene" uid="uid://ov0vfo524q6q" path="res://Scenes/player.tscn" id="3_5uk5j"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="4_wpxwh"]
+[ext_resource type="PackedScene" uid="uid://b62ugmwrc1t02" path="res://Scenes/transfer.tscn" id="5_2yl22"]
+[ext_resource type="Script" path="res://Scenes/transfer.gd" id="6_m26ng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mc0t1"]
 texture = ExtResource("1_d4bx0")
@@ -2080,6 +2082,9 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_mc0t1")
 sources/2 = SubResource("TileSetAtlasSource_vtbrh")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7qeu"]
+size = Vector2(184, 21)
+
 [node name="Sewer" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2102,3 +2107,13 @@ zoom = Vector2(2, 2)
 limit_bottom = 200
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="transfer" parent="." instance=ExtResource("5_2yl22")]
+position = Vector2(1864, 76)
+collision_layer = 258
+collision_mask = 258
+script = ExtResource("6_m26ng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transfer"]
+position = Vector2(-23, 8)
+shape = SubResource("RectangleShape2D_k7qeu")
