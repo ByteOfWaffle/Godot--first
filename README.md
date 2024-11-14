@@ -1,4 +1,4 @@
-# Stealth Platformer Game Project
+# 🥷Stealth Platformer Game Project🥷
 
 ## Overview
 This is a platformer game with the following key features:
