@@ -2,7 +2,7 @@ extends Area2D
 
 var lvl1status = false
 
-func _ready():
+func _ready(): #Runs when all nodes have been initialized, hence the name ready, makes it so nothing happens before everything is loaded.
 	recover()
 
 func _on_body_entered(body: Node2D) -> void:
