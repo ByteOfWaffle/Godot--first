@@ -2136,7 +2136,6 @@ script = ExtResource("8_0e51l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/TrainDoor/transfer"]
 position = Vector2(-0.969681, 0.350443)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_o5cb8")
 
 [node name="TrainDoor2" type="Sprite2D" parent="Doors"]
@@ -2151,7 +2150,6 @@ script = ExtResource("9_qmybo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/TrainDoor2/transfer"]
 position = Vector2(0, 1.36752)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bx2nn")
 
 [node name="TrainDoor3" type="Sprite2D" parent="Doors"]
