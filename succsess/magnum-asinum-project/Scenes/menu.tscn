@@ -51,6 +51,12 @@ theme_override_fonts/font = ExtResource("1_5o2ye")
 theme_override_font_sizes/font_size = 16
 text = "options"
 
+[node name="tutorial" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5o2ye")
+theme_override_font_sizes/font_size = 16
+text = "Tutorial"
+
 [node name="quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_5o2ye")
