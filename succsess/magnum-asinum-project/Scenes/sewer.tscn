@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b62ugmwrc1t02" path="res://Scenes/transfer.tscn" id="5_2yl22"]
 [ext_resource type="Script" path="res://Scenes/transfer.gd" id="6_m26ng"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mc0t1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0j7o8"]
 texture = ExtResource("1_d4bx0")
 texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
@@ -87,7 +87,7 @@ texture_region_size = Vector2i(32, 32)
 6:9/0 = 0
 6:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.33333, -16, 16, -16, 16, 16, -5.33333, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtbrh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cw2xe"]
 texture = ExtResource("2_epejr")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -2079,8 +2079,8 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_krtl3"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_mc0t1")
-sources/2 = SubResource("TileSetAtlasSource_vtbrh")
+sources/1 = SubResource("TileSetAtlasSource_0j7o8")
+sources/2 = SubResource("TileSetAtlasSource_cw2xe")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7qeu"]
 size = Vector2(184, 21)
