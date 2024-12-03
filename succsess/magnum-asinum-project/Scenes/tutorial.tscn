@@ -2111,11 +2111,11 @@ sources/1 = SubResource("TileSetAtlasSource_u5vrb")
 sources/2 = SubResource("TileSetAtlasSource_etgxi")
 sources/0 = SubResource("TileSetAtlasSource_en8ho")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqxm8"]
-bg_color = Color(0.412152, 0.412152, 0.412152, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xra21"]
 size = Vector2(20, 64.1537)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqxm8"]
+bg_color = Color(0.412152, 0.412152, 0.412152, 1)
 
 [node name="tutorial" type="Node2D"]
 
@@ -2186,19 +2186,6 @@ theme_override_fonts/font = ExtResource("7_k4ojm")
 theme_override_font_sizes/font_size = 16
 text = "You are now ready to work for the company"
 
-[node name="Enter" type="Label" parent="Labels"]
-offset_left = 2601.0
-offset_top = -52.0
-offset_right = 2702.0
-offset_bottom = -22.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_k4ojm")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_pqxm8")
-text = "
-Press E to enter
-"
-
 [node name="PileOfTrash" type="Sprite2D" parent="."]
 position = Vector2(-43, -36)
 scale = Vector2(1.5, 1.5)
@@ -2217,3 +2204,16 @@ script = ExtResource("10_673n0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrainDoor/transfer"]
 position = Vector2(-0.969681, 0.350443)
 shape = SubResource("RectangleShape2D_xra21")
+
+[node name="Enter" type="Label" parent="TrainDoor/transfer/CollisionShape2D"]
+offset_left = 18.9337
+offset_top = -7.85795
+offset_right = 119.934
+offset_bottom = 22.1421
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_k4ojm")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_pqxm8")
+text = "
+Press E to enter
+"

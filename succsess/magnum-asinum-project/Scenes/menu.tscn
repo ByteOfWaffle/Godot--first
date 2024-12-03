@@ -1,21 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bub0qpq4axg74"]
+[gd_scene load_steps=3 format=3 uid="uid://bub0qpq4axg74"]
 
 [ext_resource type="FontFile" uid="uid://cs14rsgkkkey8" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="1_5o2ye"]
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_wou8i"]
-
-[sub_resource type="GDScript" id="GDScript_o6xuk"]
-script/source = "extends Button
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -43,7 +29,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_5o2ye")
 theme_override_font_sizes/font_size = 16
 text = "play"
-script = SubResource("GDScript_o6xuk")
 
 [node name="options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -68,4 +53,5 @@ position = Vector2(572, 48)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
