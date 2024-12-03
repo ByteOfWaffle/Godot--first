@@ -2217,3 +2217,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_pqxm8")
 text = "
 Press E to enter
 "
+
+[connection signal="body_exited" from="TrainDoor/transfer" to="TrainDoor/transfer" method="_on_body_exited"]

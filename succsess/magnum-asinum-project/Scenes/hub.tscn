@@ -2161,3 +2161,5 @@ texture = ExtResource("6_wse0f")
 position = Vector2(726, -58)
 scale = Vector2(2.0625, 1.82813)
 texture = ExtResource("6_wse0f")
+
+[connection signal="body_exited" from="Doors/TrainDoor/transfer" to="Doors/TrainDoor/transfer" method="_on_body_exited"]
