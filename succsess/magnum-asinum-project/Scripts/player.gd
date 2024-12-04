@@ -16,9 +16,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and MAX_JUMPS >1: #If spacebar is pressed and max jumps is more than 1 then jump, since max jumps starts at two, this allows for double jump.
 		velocity.y = JUMP_VELOCITY
 		MAX_JUMPS -=1
-
-
-
 	# Get the input direction and handle the movement/deceleration.
 	#Get input direction -1, 0 or 1
 	var direction := Input.get_axis("move_left", "move_right")
@@ -36,9 +33,11 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("run")
-	else:
-		animated_sprite.play("jump")
-	
+	else: #If is on floor and direction = 0 then play idle animation. Else (if direction is -1 or 1) play run
+		if velocity.y < 0:
+			animated_sprite.play("jump")
+		elif velocity.y > 0:
+			animated_sprite.play("fall")
 	
 	if direction:
 		velocity.x = direction * SPEED

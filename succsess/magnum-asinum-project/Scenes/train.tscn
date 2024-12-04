@@ -2147,6 +2147,6 @@ script = ExtResource("4_ygsru")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -24)
 zoom = Vector2(5, 5)
-limit_bottom = 200
+limit_left = -255
 limit_smoothed = true
 position_smoothing_enabled = true
