@@ -2174,10 +2174,10 @@ theme_override_font_sizes/font_size = 16
 text = "Press Up or space to jump"
 
 [node name="Hide" type="Label" parent="Labels"]
-offset_left = 718.0
-offset_top = -169.0
-offset_right = 1140.0
-offset_bottom = -146.0
+offset_left = 746.0
+offset_top = -164.0
+offset_right = 1168.0
+offset_bottom = -141.0
 theme_override_fonts/font = ExtResource("7_k4ojm")
 theme_override_font_sizes/font_size = 16
 text = "Press C to hide"
