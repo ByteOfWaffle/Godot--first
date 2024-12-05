@@ -2108,7 +2108,10 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_k2vr4"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 32769
+physics_layer_0/collision_mask = 32769
+physics_layer_1/collision_layer = 32769
+physics_layer_1/collision_mask = 32769
 sources/1 = SubResource("TileSetAtlasSource_u5vrb")
 sources/2 = SubResource("TileSetAtlasSource_etgxi")
 sources/0 = SubResource("TileSetAtlasSource_en8ho")
@@ -2135,8 +2138,8 @@ layer_1/name = "Layer1"
 z_index = 5
 position = Vector2(-858, -24)
 scale = Vector2(2, 2)
-collision_layer = 258
-collision_mask = 259
+collision_layer = 33026
+collision_mask = 33027
 script = ExtResource("4_h07bg")
 
 [node name="Camera2D" type="Camera2D" parent="Player2"]
@@ -2237,6 +2240,6 @@ disable_mode = 1
 position = Vector2(716, -59)
 
 [node name="Slime" parent="EnemyDirection2" instance=ExtResource("13_e5yyx")]
-position = Vector2(194, 41)
+position = Vector2(196, 48)
 
 [connection signal="body_exited" from="TrainDoor/transfer" to="TrainDoor/transfer" method="_on_body_exited"]
