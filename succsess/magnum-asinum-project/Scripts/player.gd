@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-
-const SPEED = 230.0
+var is_hidden = false
+var SPEED = 230.0
 const JUMP_VELOCITY = -300.0
 var MAX_JUMPS = 2
 
@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = true
 	
 	#Play animation
-	if is_on_floor():
+	if is_on_floor() && is_hidden == false:
 		MAX_JUMPS = 2
 		if direction == 0:
 			animated_sprite.play("idle")
@@ -48,21 +48,25 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("hide"):
 		hidecharacter()
 
-var is_hidden = false
 func hidecharacter():
-	if is_hidden == false:
+	if is_hidden == false && is_on_floor():
 		is_hidden = true
 		set_collision_layer_value(2, false)
 		set_collision_layer_value(9, false)
 		set_collision_mask_value(2, false)
 		set_collision_mask_value(1, false)
 		set_collision_mask_value(9, false)
+		SPEED = 0
+		animated_sprite.play("burrow")
 		print("enabled")
 	else:
+		animated_sprite.play("rise")
+		await animated_sprite.animation_finished
 		set_collision_layer_value(2, true)
 		set_collision_layer_value(9, true)
 		set_collision_mask_value(2, true)
 		set_collision_mask_value(1, true)
 		set_collision_mask_value(9, true)
+		SPEED = 230
 		print("disabled")
 		is_hidden = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bu67gqn36ljuj"]
+[gd_scene load_steps=21 format=3 uid="uid://bu67gqn36ljuj"]
 
 [ext_resource type="Texture2D" uid="uid://b86c27ivwdwhi" path="res://Assets/sprites/Lamp_roof.png" id="1_4jjch"]
 [ext_resource type="Texture2D" uid="uid://bm4vcy2dxxfue" path="res://Assets/sprites/Tileset__castle__.png" id="1_s1fuu"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://27hl0l1fs4me" path="res://Assets/sprites/Pile_of_trash.png" id="8_wjwlo"]
 [ext_resource type="PackedScene" uid="uid://b62ugmwrc1t02" path="res://Scenes/transfer.tscn" id="9_ycsby"]
 [ext_resource type="Script" path="res://Scripts/transfertohub.gd" id="10_673n0"]
+[ext_resource type="PackedScene" uid="uid://draqmu7hmwvvs" path="res://Scenes/enemy_direction.tscn" id="12_0yvkg"]
+[ext_resource type="PackedScene" uid="uid://r0lnptd5cx4b" path="res://Scenes/Slime.tscn" id="13_e5yyx"]
 
 [sub_resource type="Environment" id="Environment_a1wcu"]
 background_mode = 3
@@ -19,8 +21,8 @@ ssao_radius = 12.3
 ssao_intensity = 8.65
 glow_enabled = true
 glow_normalized = true
-glow_intensity = 2.7
-glow_strength = 2.0
+glow_intensity = 1.74
+glow_strength = 1.2
 glow_blend_mode = 0
 glow_hdr_threshold = 0.7
 glow_hdr_scale = 2.5
@@ -2168,6 +2170,15 @@ theme_override_fonts/font = ExtResource("7_k4ojm")
 theme_override_font_sizes/font_size = 16
 text = "Press Up or space to jump"
 
+[node name="Hide" type="Label" parent="Labels"]
+offset_left = 718.0
+offset_top = -169.0
+offset_right = 1140.0
+offset_bottom = -146.0
+theme_override_fonts/font = ExtResource("7_k4ojm")
+theme_override_font_sizes/font_size = 16
+text = "Press C to hide"
+
 [node name="DoubleJump" type="Label" parent="Labels"]
 offset_left = 1317.0
 offset_top = -105.0
@@ -2217,5 +2228,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_pqxm8")
 text = "
 Press E to enter
 "
+
+[node name="EnemyDirection" parent="." instance=ExtResource("12_0yvkg")]
+position = Vector2(1103, -56)
+disable_mode = 1
+
+[node name="EnemyDirection2" parent="." instance=ExtResource("12_0yvkg")]
+position = Vector2(716, -59)
+
+[node name="Slime" parent="EnemyDirection2" instance=ExtResource("13_e5yyx")]
+position = Vector2(194, 41)
 
 [connection signal="body_exited" from="TrainDoor/transfer" to="TrainDoor/transfer" method="_on_body_exited"]
