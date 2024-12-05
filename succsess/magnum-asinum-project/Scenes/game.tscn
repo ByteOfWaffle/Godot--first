@@ -1,16 +1,14 @@
-[gd_scene load_steps=26 format=3 uid="uid://d2miga0cyguwv"]
+[gd_scene load_steps=21 format=3 uid="uid://d2miga0cyguwv"]
 
 [ext_resource type="PackedScene" uid="uid://ov0vfo524q6q" path="res://Scenes/player.tscn" id="1_2hsnm"]
 [ext_resource type="Shader" path="res://Assets/Shaders/game.gdshader" id="1_sncng"]
 [ext_resource type="Script" path="res://Scripts/gamemanager.gd" id="1_ubfj6"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="2_pqnuo"]
 [ext_resource type="FontFile" uid="uid://cs14rsgkkkey8" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_qivlf"]
-[ext_resource type="PackedScene" uid="uid://cex7orwbmfix4" path="res://Scenes/platform.tscn" id="4_pkfb7"]
 [ext_resource type="Texture2D" uid="uid://bm4vcy2dxxfue" path="res://Assets/sprites/Tileset__castle__.png" id="5_2isjk"]
 [ext_resource type="PackedScene" uid="uid://lylneo61pv67" path="res://Scenes/coin.tscn" id="5_meqpo"]
 [ext_resource type="PackedScene" uid="uid://u5k0crx5l808" path="res://Scenes/killzone.tscn" id="6_4wuku"]
 [ext_resource type="PackedScene" uid="uid://r0lnptd5cx4b" path="res://Scenes/Slime.tscn" id="7_5y2ud"]
-[ext_resource type="FontFile" uid="uid://ds3go8anciis8" path="res://Assets/fonts/PixelOperator8.ttf" id="8_mt1xn"]
 [ext_resource type="Texture2D" uid="uid://ctyrmi52biote" path="res://Assets/sprites/BackDrops/Nightcity.png" id="11_xcats"]
 [ext_resource type="PackedScene" uid="uid://b62ugmwrc1t02" path="res://Scenes/transfer.tscn" id="12_7404v"]
 [ext_resource type="Texture2D" uid="uid://fwcq3ncledt5" path="res://Assets/sprites/train door.png" id="13_p5cw4"]
@@ -37,44 +35,6 @@ glow_hdr_threshold = 0.7
 glow_hdr_scale = 2.5
 fog_sun_scatter = 7.65
 adjustment_enabled = true
-
-[sub_resource type="Animation" id="Animation_6wp53"]
-resource_name = "Move"
-length = 3.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.96667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(192, 54), Vector2(367, 54)]
-}
-
-[sub_resource type="Animation" id="Animation_vu20f"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(199, 56)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mr7wk"]
-_data = {
-"Move": SubResource("Animation_6wp53"),
-"RESET": SubResource("Animation_vu20f")
-}
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0b2wh"]
 
@@ -2191,15 +2151,6 @@ limit_bottom = 200
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Platform" parent="." instance=ExtResource("4_pkfb7")]
-position = Vector2(199, 56)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
-libraries = {
-"": SubResource("AnimationLibrary_mr7wk")
-}
-autoplay = "Move"
-
 [node name="Killzone" parent="." instance=ExtResource("6_4wuku")]
 position = Vector2(28, 157)
 collision_layer = 1073742082
@@ -2231,59 +2182,6 @@ position = Vector2(275, 52)
 position = Vector2(437, 52)
 
 [node name="labels" type="Node" parent="."]
-
-[node name="Label4" type="Label" parent="labels"]
-offset_left = 165.0
-offset_top = -100.0
-offset_right = 341.0
-offset_bottom = -70.0
-theme_override_fonts/font = ExtResource("8_mt1xn")
-theme_override_font_sizes/font_size = 8
-text = "Trust me Knight cannot swim
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label5" type="Label" parent="labels"]
-offset_left = 178.0
-offset_top = 98.0
-offset_right = 354.0
-offset_bottom = 128.0
-theme_override_fonts/font = ExtResource("8_mt1xn")
-theme_override_font_sizes/font_size = 8
-text = "Or don't trust me"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label3" type="Label" parent="labels"]
-offset_left = 52.0
-offset_top = -73.0
-offset_right = 138.0
-offset_bottom = -43.0
-theme_override_fonts/font = ExtResource("8_mt1xn")
-theme_override_font_sizes/font_size = 8
-text = "This is bob
-Bob has anger
-issues"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="labels"]
-offset_left = -161.0
-offset_top = -33.0
-offset_right = 11.0
-offset_bottom = -10.0
-theme_override_fonts/font = ExtResource("8_mt1xn")
-theme_override_font_sizes/font_size = 8
-text = "WASD or arrow keys to move"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="labels"]
-offset_left = -104.0
-offset_top = 3.0
-offset_right = -18.0
-offset_bottom = 13.0
-theme_override_fonts/font = ExtResource("8_mt1xn")
-theme_override_font_sizes/font_size = 8
-text = "Space to jump"
-metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_a4t4g")

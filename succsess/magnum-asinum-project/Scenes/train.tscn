@@ -2092,7 +2092,8 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_ge3vy"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 32769
+physics_layer_0/collision_mask = 32769
 sources/1 = SubResource("TileSetAtlasSource_2e0uf")
 sources/2 = SubResource("TileSetAtlasSource_nset7")
 sources/0 = SubResource("TileSetAtlasSource_yjpjh")
@@ -2140,8 +2141,8 @@ texture = ExtResource("6_hqkib")
 z_index = 5
 position = Vector2(-200, -1)
 scale = Vector2(2, 2)
-collision_layer = 258
-collision_mask = 259
+collision_layer = 33026
+collision_mask = 33027
 script = ExtResource("4_ygsru")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
