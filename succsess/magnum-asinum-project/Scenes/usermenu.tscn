@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpoo1cl1o5k4d"]
+
+[ext_resource type="Script" path="res://Scripts/usermenu.gd" id="1_y8wo3"]
+
+[node name="Usermenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y8wo3")
+
+[node name="Username" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 106.0
+offset_right = 763.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 48
+placeholder_text = "Username"
+
+[node name="Password" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 257.0
+offset_right = 763.0
+offset_bottom = 407.0
+theme_override_font_sizes/font_size = 48
+placeholder_text = "Password"
+
+[node name="Login" type="Button" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 411.0
+offset_right = 600.0
+offset_bottom = 511.0
+theme_override_font_sizes/font_size = 40
+text = "Create"
+
+[node name="SwitchMode" type="Button" parent="."]
+layout_mode = 0
+offset_left = 613.0
+offset_top = 411.0
+offset_right = 913.0
+offset_bottom = 511.0
+theme_override_font_sizes/font_size = 40
+text = "Switch"
+
+[connection signal="button_down" from="Login" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="SwitchMode" to="." method="_on_switch_mode_pressed"]
