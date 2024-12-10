@@ -1,44 +1,59 @@
 extends Control
 
-var accounts = {}  # Dictionary to store all accounts
 var login_mode = false  # Controls the current mode - False = Register mode, True = Login mode
+var base_url = "http://localhost/dnd"  # Update this to match your XAMPP setup
 
-# Runs when scene loads
 func _ready():
-	load_accounts() # Load any existing accounts from the save file
-	update_button_text() # Set starting button text states
+	# Add HTTPRequest node if not already added in scene
+	if !has_node("HTTPRequest"):
+		var http_request = HTTPRequest.new()
+		add_child(http_request)
+		http_request.request_completed.connect(_on_http_request_request_completed)
 	
-# Updates the text on buttons based on current mode
-# If in login mode: main button shows "Login" and switch button shows "Switch to Register"
-# If in register mode: main button shows "Create Account" and switch button shows "Switch to Login"
+	update_button_text()
+
 func update_button_text(): 
 	$Login.text = "Login" if login_mode else "Create Account" 
 	$SwitchMode.text = "Switch to Register" if login_mode else "Switch to Login"
 
 func _on_button_button_down() -> void:
 	var input_username = $Username.text
-	var input_password = $Password.text.sha256_text()
+	var input_password = $Password.text
 	
-	if !login_mode:  # Register mode (If not login mode ! reverses)
-		# Check if username already exists
-		if accounts.has(input_username):
-			print("Username already exists!")
-			return
-			
-		# Add new account
-		accounts[input_username] = input_password
-		print("Account created successfully!")
-		save_accounts()
-	else:  # Login mode
-		# Check if account exists and password matches
-		if accounts.has(input_username):
-			if accounts[input_username] == input_password:
-				print("Login success")
-				get_tree().change_scene_to_file("res://Scenes/menu.tscn")
-			else:
-				print("Wrong password")
+	if input_username.is_empty() or input_password.is_empty():
+		print("Please fill in all fields!")
+		return
+	#Prepare data for requests 
+	var data = {
+		"username": input_username,
+		"password": input_password
+	}
+	#Conver data to json and prepare header variable
+	var json = JSON.stringify(data)
+	var headers = ["Content-Type: application/json"]
+	var url = base_url + ("/login.php" if login_mode else "/register.php")
+	
+	$HTTPRequest.request(url, headers, HTTPClient.METHOD_POST, json)
+
+func _on_http_request_request_completed(result, response_code, headers, body):
+	if result != HTTPRequest.RESULT_SUCCESS:
+		print("Error with request")
+		return
+	
+	var json = JSON.parse_string(body.get_string_from_utf8())
+	if json == null:
+		print("Error parsing response")
+		return
+	
+	print(json.message)  # Print server response message
+	
+	if json.status == "success":
+		if login_mode:
+			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 		else:
-			print("Account not found")
+			# Switch to login mode after successful registration
+			login_mode = true
+			update_button_text()
 	
 	# Clear input fields
 	$Username.text = ""
@@ -47,24 +62,3 @@ func _on_button_button_down() -> void:
 func _on_switch_mode_pressed():
 	login_mode = !login_mode
 	update_button_text()
-
-func save_accounts():
-	var save_data = {
-		"accounts": accounts
-	}
-	
-	var json_string = JSON.stringify(save_data)
-	var json_file = FileAccess.open("res://saveuser.json", FileAccess.WRITE)
-	json_file.store_line(json_string)
-	json_file.close()
-
-func load_accounts():
-	if FileAccess.file_exists("res://saveuser.json"):
-		var json_file = FileAccess.open("res://saveuser.json", FileAccess.READ)
-		var json_string = json_file.get_line()
-		var json_data = JSON.parse_string(json_string)
-		
-		if json_data and json_data.has("accounts"):
-			accounts = json_data["accounts"]
-		
-		json_file.close()
