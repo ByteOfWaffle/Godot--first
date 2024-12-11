@@ -5,10 +5,8 @@ var lvl1status = false
 func _ready(): #Runs when project has loaded.
 	recover()
 
-
-
 func recover():
-	var jsonFile = FileAccess.open("res://savegame.json", FileAccess.READ)
+	var jsonFile = FileAccess.open("user://savegame.save", FileAccess.READ)
 	if jsonFile:
 		var jsonString = jsonFile.get_as_text()
 		jsonFile.close()

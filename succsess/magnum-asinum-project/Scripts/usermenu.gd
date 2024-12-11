@@ -21,7 +21,7 @@ func _on_button_button_down() -> void:
 	var input_password = $Password.text
 	
 	if input_username.is_empty() or input_password.is_empty():
-		print("Please fill in all fields!")
+		print("Please fill in all fields")# Player can't see command panel, but might add a promt for this later
 		return
 	#Prepare data for requests 
 	var data = {
@@ -31,7 +31,7 @@ func _on_button_button_down() -> void:
 	#Conver data to json and prepare header variable
 	var json = JSON.stringify(data)
 	var headers = ["Content-Type: application/json"]
-	var url = base_url + ("/login.php" if login_mode else "/register.php")
+	var url = base_url + ("/login.php" if login_mode else "/register.php") #Takes the url for localhost and opens either the login or php depending on login mode.
 	
 	$HTTPRequest.request(url, headers, HTTPClient.METHOD_POST, json)
 

@@ -13,6 +13,6 @@ func save():
 		}
 	
 	var json_string = JSON.stringify(save_data) #converts to JSON
-	var json_file = FileAccess.open("res://savegame.json", FileAccess.WRITE)
+	var json_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	json_file.store_line(json_string)
 	json_file.close()

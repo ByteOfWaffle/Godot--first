@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1621;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#162C2B;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Fog effect -->
+    <filter id="fog">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+    </filter>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1920" height="1080" fill="url(#skyGradient)" />
+
+  <!-- Distant buildings layer -->
+  <g opacity="0.7">
+    <path d="M0 400 L100 380 L200 420 L300 390 L400 440 L500 400 L600 420 L700 380 L800 410 L900 390 L1000 420 L1100 380 L1200 400 L1300 380 L1400 420 L1500 390 L1600 410 L1700 380 L1800 400 L1920 390 L1920 1080 L0 1080 Z" 
+          fill="#0D1C1E" />
+  </g>
+
+  <!-- Mid-distance buildings -->
+  <g opacity="0.8">
+    <path d="M0 500 L150 480 L300 520 L450 490 L600 530 L750 500 L900 520 L1050 480 L1200 510 L1350 490 L1500 520 L1650 480 L1800 500 L1920 490 L1920 1080 L0 1080 Z" 
+          fill="#0F2426" />
+  </g>
+
+  <!-- Foreground buildings -->
+  <g>
+    <!-- Building 1 -->
+    <rect x="100" y="300" width="200" height="780" fill="#112B2D" />
+    <g fill="#1A4545" opacity="0.3">
+      <rect x="120" y="320" width="30" height="30" />
+      <rect x="170" y="320" width="30" height="30" />
+      <rect x="220" y="320" width="30" height="30" />
+      <!-- Repeated window pattern -->
+      <rect x="120" y="370" width="30" height="30" />
+      <rect x="170" y="370" width="30" height="30" />
+      <rect x="220" y="370" width="30" height="30" />
+    </g>
+
+    <!-- Building 2 -->
+    <rect x="400" y="200" width="300" height="880" fill="#0E2224" />
+    <!-- Windows -->
+    <g fill="#1A4545" opacity="0.2">
+      <rect x="420" y="220" width="40" height="40" />
+      <rect x="480" y="220" width="40" height="40" />
+      <rect x="540" y="220" width="40" height="40" />
+      <rect x="600" y="220" width="40" height="40" />
+    </g>
+
+    <!-- Building 3 -->
+    <rect x="800" y="100" width="400" height="980" fill="#0D1F21" />
+    <!-- Windows -->
+    <g fill="#1A4545" opacity="0.25">
+      <rect x="820" y="120" width="50" height="50" />
+      <rect x="890" y="120" width="50" height="50" />
+      <rect x="960" y="120" width="50" height="50" />
+      <rect x="1030" y="120" width="50" height="50" />
+      <rect x="1100" y="120" width="50" height="50" />
+    </g>
+
+    <!-- Building 4 -->
+    <rect x="1300" y="250" width="250" height="830" fill="#112B2D" />
+    <!-- Windows -->
+    <g fill="#1A4545" opacity="0.3">
+      <rect x="1320" y="270" width="35" height="35" />
+      <rect x="1375" y="270" width="35" height="35" />
+      <rect x="1430" y="270" width="35" height="35" />
+      <rect x="1485" y="270" width="35" height="35" />
+    </g>
+
+    <!-- Building 5 -->
+    <rect x="1600" y="150" width="320" height="930" fill="#0E2224" />
+    <!-- Windows -->
+    <g fill="#1A4545" opacity="0.2">
+      <rect x="1620" y="170" width="45" height="45" />
+      <rect x="1685" y="170" width="45" height="45" />
+      <rect x="1750" y="170" width="45" height="45" />
+      <rect x="1815" y="170" width="45" height="45" />
+    </g>
+  </g>
+
+  <!-- Atmospheric overlay -->
+  <rect width="1920" height="1080" fill="#0A3F3F" opacity="0.1" />
+
+  <!-- Fog patches -->
+  <g filter="url(#fog)" opacity="0.15">
+    <path d="M0 800 Q480 750 960 800 Q1440 850 1920 800 L1920 1080 L0 1080 Z" 
+          fill="#1A4545" />
+    <path d="M0 600 Q480 550 960 600 Q1440 650 1920 600" 
+          fill="#1A4545" opacity="0.1" />
+  </g>
+
+  <!-- Light beams -->
+  <g opacity="0.1">
+    <path d="M200 0 L100 1080" stroke="#1A4545" strokeWidth="20" />
+    <path d="M800 0 L900 1080" stroke="#1A4545" strokeWidth="15" />
+    <path d="M1400 0 L1300 1080" stroke="#1A4545" strokeWidth="25" />
+  </g>
+</svg>

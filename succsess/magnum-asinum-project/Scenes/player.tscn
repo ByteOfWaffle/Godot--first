@@ -106,7 +106,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"burrow",
-"speed": 8.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -159,7 +159,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"rise",
-"speed": 8.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
