@@ -25,7 +25,7 @@ The game and database is built using the following technologies:
 - 🖥️ Platform: Windows(game), Linux(database)
 - 🎮 Engine: Godot
 - 👨‍💻 Programming Language: GDscript
-- 🗄️ Database: Probably some kinda SQL-based database, Still tryna figure it out.
+- 🗄️ Database: Local webserver with XAMPP, using Apace, MySQL and PHP.
 
 
 # 🌐 How to Set Up a Database for Accounts in XAMPP
