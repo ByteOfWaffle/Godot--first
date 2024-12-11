@@ -28,8 +28,16 @@ The game and database is built using the following technologies:
 - 🗄️ Database: Probably some kinda SQL-based database, Still tryna figure it out.
 
 
-## 🌐 How to set up database for accounts
+## 🌐 How to set up database for accounts in XAMPP
 
-First make sure you have a WebServer capable of SQL. If you don't you can set up a local one with xampp
+If you already have your own web server you can just make a folder in your directory called DND, and insert the PHP files attached, and make a database called dnd_db and a table with 2 collums "username" and "password"
 
+For XAMPP install it here: https://www.apachefriends.org/
 
+⚠️Make sure to save XAMPP directly in the C: directory (NOT IN PROGRAM FILES)⚠️
+
+Open XAMPP control panel as administrator from the file you downloaded ⚠️VERY IMPORTANT TO OPEN AS ADMIN, CAN BREAK IF YOU DON'T⚠️
+
+Now start Apache and MySQL from the control panel.
+In the "MySQL" row click on admin, and you'll be sent the the PHPmyadmin page. Here you can create and configure databases and tables.
+Make a new database called: 
