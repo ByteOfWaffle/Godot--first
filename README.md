@@ -65,9 +65,4 @@ For users setting up with XAMPP, follow these detailed steps:
 Should end up looking like this:
 ![image](https://github.com/user-attachments/assets/0dd69e31-7c84-49e4-8961-30971c3338c3)
 
-## 7. Test the Setup
-- Open your browser and load the PHP files. The application should now be able to save usernames and passwords to the `dnd_db` database.
-
----
-
 By following these steps, your database should be properly set up and connected to the game.
