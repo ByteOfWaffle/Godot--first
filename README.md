@@ -43,11 +43,11 @@ For users setting up with XAMPP, follow these detailed steps:
   - ⚠️ **This step is crucial. Not opening as an administrator can cause errors.**
 
 ## 3. Start Services
-- In the XAMPP control panel, start **Apache** and **MySQL** by clicking the respective "Start" buttons.
+- In the XAMPP control panel, start **Apache** and **MySQL** by clicking the "Start" buttons.
 
 ## 4. Access phpMyAdmin
 - In the row labeled "MySQL," click on the **Admin** button. This will open the phpMyAdmin page in your browser.
-- Use phpMyAdmin to create and configure your database.
+- phpMyAdmin is used to create and configure your database.
 
 ## 5. Create the Database
 1. In phpMyAdmin, create a new database named `dnd_db`.
@@ -58,13 +58,15 @@ For users setting up with XAMPP, follow these detailed steps:
 3. Save the table configuration.
 
 ## 6. Configure XAMPP Files
-1. Open the XAMPP installation directory and navigate to the `htdocs` folder.
+1. Open the XAMPP installation directory and navigate to the `htdocs` folder. If you have done everything correctly it should lay here: `C:\xampp\htdocs`
 2. Inside the `htdocs` folder, create a new folder named `dnd`.
 3. Place the attached PHP files into the `dnd` folder.
+Should end up looking like this:
+![image](https://github.com/user-attachments/assets/0dd69e31-7c84-49e4-8961-30971c3338c3)
 
 ## 7. Test the Setup
 - Open your browser and load the PHP files. The application should now be able to save usernames and passwords to the `dnd_db` database.
 
 ---
 
-By following these steps, your database should be properly set up and connected to your application. Happy coding!
+By following these steps, your database should be properly set up and connected to the game.
