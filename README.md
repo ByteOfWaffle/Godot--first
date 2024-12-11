@@ -28,6 +28,8 @@ The game and database is built using the following technologies:
 - 🗄️ Database: Probably some kinda SQL-based database, Still tryna figure it out.
 
 
-## How to set up database for accounts
+## 🌐 How to set up database for accounts
 
 First make sure you have a WebServer capable of SQL. If you don't you can set up a local one with xampp
+
+
