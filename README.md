@@ -61,6 +61,7 @@ For users setting up with XAMPP, follow these detailed steps:
 1. Open the XAMPP installation directory and navigate to the `htdocs` folder. If you have done everything correctly it should lay here: `C:\xampp\htdocs`
 2. Inside the `htdocs` folder, create a new folder named `dnd`.
 3. Place the attached PHP files into the `dnd` folder.
+
 Should end up looking like this:
 ![image](https://github.com/user-attachments/assets/0dd69e31-7c84-49e4-8961-30971c3338c3)
 
