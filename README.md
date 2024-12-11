@@ -28,7 +28,4 @@ The game and database is built using the following technologies:
 - 🗄️ Database: Probably some kinda SQL-based database, Still tryna figure it out.
 
 
-## 📈 Progress
-Current progresson and future plans can be found in the Kanban and issues page
-
-I welcome any feedback to help shape the development of this game.
+## How to set up local Webserver for accounts
