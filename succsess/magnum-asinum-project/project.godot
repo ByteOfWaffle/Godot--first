@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Magnum Asinum Project"
+config/name="DarkNight Dispatch"
 run/main_scene="res://Scenes/usermenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Logo.png"
 
 [input]
 
