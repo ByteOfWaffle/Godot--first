@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm4vcy2dxxfue" path="res://Assets/sprites/Tileset__castle__.png" id="5_2isjk"]
 [ext_resource type="PackedScene" uid="uid://lylneo61pv67" path="res://Scenes/coin.tscn" id="5_meqpo"]
 [ext_resource type="PackedScene" uid="uid://u5k0crx5l808" path="res://Scenes/killzone.tscn" id="6_4wuku"]
-[ext_resource type="PackedScene" uid="uid://r0lnptd5cx4b" path="res://Scenes/Slime.tscn" id="7_5y2ud"]
+[ext_resource type="PackedScene" uid="uid://r0lnptd5cx4b" path="res://Scenes/observer.tscn" id="7_5y2ud"]
 [ext_resource type="Texture2D" uid="uid://ctyrmi52biote" path="res://Assets/sprites/BackDrops/Nightcity.png" id="11_xcats"]
 [ext_resource type="PackedScene" uid="uid://b62ugmwrc1t02" path="res://Scenes/transfer.tscn" id="12_7404v"]
 [ext_resource type="Texture2D" uid="uid://fwcq3ncledt5" path="res://Assets/sprites/train door.png" id="13_p5cw4"]

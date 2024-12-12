@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b62ugmwrc1t02" path="res://Scenes/transfer.tscn" id="9_ycsby"]
 [ext_resource type="Script" path="res://Scripts/transfertohub.gd" id="10_673n0"]
 [ext_resource type="PackedScene" uid="uid://draqmu7hmwvvs" path="res://Scenes/enemy_direction.tscn" id="12_0yvkg"]
-[ext_resource type="PackedScene" uid="uid://r0lnptd5cx4b" path="res://Scenes/Slime.tscn" id="13_e5yyx"]
+[ext_resource type="PackedScene" uid="uid://r0lnptd5cx4b" path="res://Scenes/observer.tscn" id="13_e5yyx"]
 
 [sub_resource type="Environment" id="Environment_a1wcu"]
 background_mode = 3

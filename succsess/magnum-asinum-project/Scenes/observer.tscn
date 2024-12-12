@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://r0lnptd5cx4b"]
 
-[ext_resource type="Script" path="res://Scripts/slime.gd" id="1_6acqk"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_6acqk"]
 [ext_resource type="Texture2D" uid="uid://c2pmkgiujlo8h" path="res://Assets/sprites/stormhead/run.png" id="2_3mce1"]
 [ext_resource type="PackedScene" uid="uid://u5k0crx5l808" path="res://Scenes/killzone.tscn" id="2_84vsg"]
 

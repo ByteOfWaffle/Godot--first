@@ -15,10 +15,6 @@ run/main_scene="res://Scenes/usermenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-SaveManager="*res://Scripts/SaveManager.gd"
-
 [input]
 
 jump={
