@@ -12,7 +12,7 @@ func save():
 		"lvl1_completed": lvl1status
 		}
 	
-	var json_string = JSON.stringify(save_data) #converts to JSON
-	var json_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
-	json_file.store_line(json_string)
-	json_file.close()
+	var json_string = JSON.stringify(save_data) #converts to JSON string
+	var json_file = FileAccess.open("user://savegame.save", FileAccess.WRITE) # Opens/makes the save with write acces.
+	json_file.store_line(json_string) # Stores the line into the JSON file
+	json_file.close() # Closes the JSON file

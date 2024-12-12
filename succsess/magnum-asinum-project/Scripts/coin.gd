@@ -1,6 +1,6 @@
 extends Area2D
 
-
+#Makes the game manager node connected to the variable, same with animation player
 @onready var gamemanager: Node = %Gamemanager
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
