@@ -1,8 +1,7 @@
 extends Control
 
 var login_mode = false  # Controls the current mode - False = Register mode, True = Login mode
-var base_url = "http://10.2.3.78/dnd"  # Update this to match your XAMPP setup. 
-#If my IP adress changes I also need to change it here and in the XAMPP apache configuration (C:\xampp\apache\conf\httpd.conf)
+var base_url = "http://10.2.1.68/dnd"  # Update this to match current ip adress. 
 
 func _ready():
 	# Add HTTPRequest node if not already added in scene
