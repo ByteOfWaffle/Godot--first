@@ -45,7 +45,7 @@ size = Vector2(10, 28.5)
 [node name="Reaper" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(13, -111)
+position = Vector2(17, -10)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1yktj")
 autoplay = "default"
@@ -57,27 +57,27 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
-position = Vector2(-6, 41.75)
+position = Vector2(-7.5, -2.5)
 shape = SubResource("RectangleShape2D_7glh4")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
-position = Vector2(0.5, -13)
+position = Vector2(2, -2)
 target_position = Vector2(23.5, 0)
 collision_mask = 128
 collide_with_areas = true
 
 [node name="RightKill" type="RayCast2D" parent="."]
-position = Vector2(0.5, -13)
+position = Vector2(2, -2)
 target_position = Vector2(44, 0)
 collision_mask = 128
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
-position = Vector2(0.5, -13)
+position = Vector2(2, -2)
 target_position = Vector2(-18.5, 0)
 collision_mask = 128
 collide_with_areas = true
 
 [node name="LeftKill" type="RayCast2D" parent="."]
-position = Vector2(0.5, -13)
+position = Vector2(2, -2)
 target_position = Vector2(-23.5, 0)
 collision_mask = 128

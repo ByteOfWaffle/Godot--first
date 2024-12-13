@@ -1,7 +1,7 @@
 extends Control
 
 var login_mode = false  # Controls the current mode - False = Register mode, True = Login mode
-var base_url = "http://10.2.1.68/dnd"  # Update this to match current ip adress. 
+var base_url = "http://jeremy2imc/dnd"  # Update this to match host's Device name, or have it as localhost for testing.
 
 func _ready():
 	# Add HTTPRequest node if not already added in scene
