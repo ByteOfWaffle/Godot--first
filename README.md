@@ -52,7 +52,7 @@ Or clone by downloading the project as ZIP here:
 ### 3. Making Contributions
 1. Create a new branch for your feature:
 ```bash
-git checkout -b feature/your-feature-name
+git checkout -b NameOfYourFeature
 ```
 
 2. Make your changes and commit them:
