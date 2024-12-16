@@ -29,7 +29,7 @@ The game and database is built using the following technologies:
 
 
 ## 🤝 How to contribute
-I welcome contributions to the project! Here's how you can get started:
+I welcome contributions to the project, here's how you can get started
 
 ### 1. Clone the Repository
 ```bash
