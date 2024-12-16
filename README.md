@@ -57,7 +57,9 @@ git checkout -b NameOfYourFeature
 
 2. Make your changes and commit them:
 ```bash
+# Stage all changes
 git add .
+# Commit staged changes with a message/description
 git commit -m "Description of your changes"
 ```
 
@@ -69,7 +71,7 @@ git push origin feature/your-feature-name
 4. Create a Pull Request through GitHub
 
 ### Contribution Guidelines
-- Follow the existing code style and conventions
+- Follow the existing code style
 - Test your changes thoroughly
 - Update documentation if you're adding new features
 - Create issues for major changes and enhancements
