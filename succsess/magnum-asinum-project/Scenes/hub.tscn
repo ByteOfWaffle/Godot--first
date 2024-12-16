@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://da3hqgrb25pkb" path="res://Scenes/ase.tscn" id="5_soqbb"]
 [ext_resource type="Texture2D" uid="uid://fwcq3ncledt5" path="res://Assets/sprites/train door.png" id="6_wse0f"]
 [ext_resource type="PackedScene" uid="uid://b62ugmwrc1t02" path="res://Scenes/transfer.tscn" id="7_ygyrm"]
-[ext_resource type="Script" path="res://Scenes/transfergamelvl1.gd" id="8_0e51l"]
-[ext_resource type="Script" path="res://Scenes/transfergamelvl2.gd" id="9_qmybo"]
+[ext_resource type="Script" path="res://Scripts/transfergamelvl1.gd" id="8_0e51l"]
+[ext_resource type="Script" path="res://Scripts/transfergamelvl2.gd" id="9_qmybo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s6vnl"]
 texture = ExtResource("1_jnx4w")

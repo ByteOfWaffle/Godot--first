@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b7rvdknxt0tk6" path="res://Assets/sprites/BackDrops/Dungeon Tile Set.png" id="3_lnx12"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="4_wpxwh"]
 [ext_resource type="PackedScene" uid="uid://b62ugmwrc1t02" path="res://Scenes/transfer.tscn" id="5_2yl22"]
-[ext_resource type="Script" path="res://Scenes/transfer.gd" id="6_m26ng"]
+[ext_resource type="Script" path="res://Scripts/win.gd" id="6_m26ng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0j7o8"]
 texture = ExtResource("1_d4bx0")

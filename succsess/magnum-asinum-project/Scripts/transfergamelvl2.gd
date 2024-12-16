@@ -6,7 +6,7 @@ func _ready(): #Runs when project has loaded.
 	recover()
 
 func recover():
-	var jsonFile = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var jsonFile = FileAccess.open("user://savegame.save", FileAccess.READ) # Open the JSON save file
 	if jsonFile:
 		var jsonString = jsonFile.get_as_text()
 		jsonFile.close()
