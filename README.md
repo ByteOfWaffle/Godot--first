@@ -45,7 +45,7 @@ Or clone by downloading the project as ZIP here:
 
 
 ### 2. Set Up Development Environment
-1. Install Godot Engine 4.x from [Godot's official website](https://godotengine.org/download)
+1. Install Godot Engine 4.3 from [Godot's official website](https://godotengine.org/download)
 2. Open Godot and import the project
 3. Set up XAMPP for database functionality (see database setup section below)
 
@@ -73,7 +73,6 @@ git push origin feature/your-feature-name
 - Test your changes thoroughly
 - Update documentation if you're adding new features
 - Create issues for major changes and enhancements
-- Keep pull requests focused on a single feature or fix
 
 
 # 🌐 How to Set Up a Database for Accounts in XAMPP
