@@ -1,15 +1,9 @@
 extends Control
 
 var login_mode = false  # Controls the current mode - False = Register mode, True = Login mode
-var base_url = "http://jeremy2imc/dnd"  # Update this to match host's Device name, or have it as localhost for testing.
+var base_url = "http://localhost/dnd"  # Update this to match host's Device ip adress for lan, or have it as localhost for testing.
 
 func _ready():
-	# Add HTTPRequest node if not already added in scene
-	if !has_node("HTTPRequest"):
-		var http_request = HTTPRequest.new()
-		add_child(http_request)
-		http_request.request_completed.connect(_on_http_request_request_completed)
-	
 	update_button_text()
 
 func update_button_text(): 
